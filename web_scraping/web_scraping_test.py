@@ -22,7 +22,7 @@ col = []
 for t in tr_elements[0]:
     i+=1
     name=t.text.strip()
-    print(i,name)
+    
     col.append((name,[]))
 
 page1 = page1.findAll('section', {"class":"bordered block"})
@@ -39,7 +39,7 @@ for pageNumber in page1:
         for t in element:
             
             name  = t.text.strip()
-            print(i,name)
+            
             col[i][1].append(name)
             i+=1
 
@@ -78,7 +78,7 @@ dicc = {title:column for (title,column) in col}
 df = pd.DataFrame(dicc)
 
 # print(len(col))
-print(df)
+print(df.head())
 # for i in range(len(col)):
 #     print(col[i][0])
 
